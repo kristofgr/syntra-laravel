@@ -23,10 +23,10 @@ Maak volgende endpoints:
 - PATCH /blog-posts/{id}
 
 Op basis van volgende model:
-  -id
-  -timestamps
-  -title
-  -body
-  -published (0,1)
+- id
+- timestamps
+- title
+- body
+- published (0,1)
 
 
