@@ -24,6 +24,7 @@ class BlogPostController extends Controller
         ];
     }
 
+    
     public function update(BlogPost $blogpost, Request $request) {
         $validator = Validator::make($request->all(), [
             'title' => 'string|required|max:255',
@@ -54,8 +55,6 @@ class BlogPostController extends Controller
         if ($validator->fails()) {
             return $validator->errors()->toJson();
         }
-
-        // return $request;
 
         $status = $blogpost->update($request->only(['title', 'body']));
 
