@@ -30,7 +30,19 @@ Op basis van volgende model:
 - published (0,1)
 
 
-## USER LOGIN + MANAGEMENT
---------------------------
+## ROAD RAGE (NUMMERPLATEN MESSAGE BOARD)
+-----------------------------------------
 
-tbc
+Maak een online message board waarop gebruikers een bericht kunnen posten, gericht aan een auto (nummerplaat). Gebruik hiervoor Breeze (en Sanctum).
+
+De applicatie bestaat uit 2 onderdelen:
+1. Back-end: registeren en inloggen (mbv Breeze), waarna de gebruiker een pagina te zien krijgt waarop nieuwe _entries_ toegevoegd kunnen worden en waaronder alle *eigen* entries getoond worden. De eigen entries kunnen bewerkt en verwijderd worden. Indien er heel veel eigen entries zijn, worden 20 entries getoond en verschijnt paginering onderaan de pagina. Een entry bestaat uit een nummerplaat, een boodschap, een author (+ de standaard id en timestamp velden)
+2. Front-end: een API (GET-endpoints) die toelaat om entries op te vragen (meest recente eerst) en die toelaat om te filteren op basis van nummerplaat
+
+####Extra: 
+- verwijder de landingspagina van de back-end leeg en toon login form of meteen dashboard.
+- maak gebruik van een Seeder om dummy data aan te maken
+- zorg ervoor dat de entries geen auto-incremental id hebben, maar een UUID
+
+
+Zie https://bootcamp.laravel.com/ voor herhaling + eventueel https://www.youtube.com/watch?v=XVxyY_owL_M
