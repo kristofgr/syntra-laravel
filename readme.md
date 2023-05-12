@@ -40,7 +40,7 @@ De applicatie bestaat uit 2 onderdelen:
 2. Front-end: een API (GET-endpoints) die toelaat om entries op te vragen (meest recente eerst) en die toelaat om te filteren op basis van nummerplaat
 
 ####Extra: 
-- verwijder de landingspagina van de back-end leeg en toon login form of meteen dashboard.
+- verwijder de landingspagina van de back-end en toon login form of meteen dashboard.
 - maak gebruik van een Seeder om dummy data aan te maken
 - zorg ervoor dat de entries geen auto-incremental id hebben, maar een UUID
 
