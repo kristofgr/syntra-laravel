@@ -24,12 +24,15 @@ class EntrySeeder extends Seeder
         // Seeding entries table
         foreach ($userIds as $userId) {
             for ($i = 0; $i < 50; $i++) {
+                $created = $faker->dateTimeBetween('-1 year', 'now');
+
                 DB::table('entries')->insert([
                     'user_id' => $faker->randomElement($userIds),
                     'plate' => $faker->regexify('[A-Z]{2}[0-9]{2}[A-Z]{2}'),
                     'message' => $faker->sentence,
                     'upvotes' => $faker->numberBetween(0, 9999),
-                    "created_at" => $faker->dateTimeBetween('-1 year', 'now')
+                    "created_at" => $created,
+                    "updated_at" => $faker->dateTimeBetween($created, 'now')
                 ]);
             }
         }
