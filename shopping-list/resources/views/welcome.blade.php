@@ -13,10 +13,10 @@
             <ul>
             @foreach($shopitems as $value)
                 <li>
-                    {{ $value->name }} - 
+                    {{ $value->name }} -
                     <form method="post" action="{{ route('completeItem', $value->id) }}">
                         @csrf
-                        <button type="submit">check off</button> 
+                        <button type="submit">check off</button>
                      </form>
                 </li>
             @endforeach
@@ -26,7 +26,7 @@
                @csrf
                 <label for="shopItem">New todo item</label>
                 <input type="text" name="shopItem" />
-                <button type="submit">Add</button> 
+                <button type="submit">Add</button>
             </form>
         </div>
     </body>
