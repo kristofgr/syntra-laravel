@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'admin',
-            'email' => 'admin@gmail',
+            'email' => 'admin@admin.com',
             'password' => Hash::make('admin'),
             "created_at" => $created,
             "updated_at" => $faker->dateTimeBetween($created, 'now')
