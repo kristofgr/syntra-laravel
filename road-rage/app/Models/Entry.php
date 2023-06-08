@@ -12,7 +12,8 @@ class Entry extends Model
 
     protected $fillable = [
         'message',
-        'plate'
+        'plate',
+        'photo'
     ];
 
     public function user(): BelongsTo

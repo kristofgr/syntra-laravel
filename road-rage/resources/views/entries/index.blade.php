@@ -10,13 +10,19 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-                    <form method="POST" action="{{ route('entries.store') }}">
+                    <form method="POST" action="{{ route('entries.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div>
                             <x-input-label for="plate" :value="__('Plate')" />
                             <x-text-input id="plate" class="block w-full" type="plate" name="plate" :value="old('plate')" required autofocus />
                             <x-input-error :messages="$errors->get('plate')" class="mt-2" />
+                        </div>
+
+                        <div>
+                            <x-input-label for="photo" :value="__('Photo')" />
+                            <input id="photo" class="block w-full" type="file" name="photo" :value="old('photo')" />
+                            <x-input-error :messages="$errors->get('photo')" class="mt-2" />
                         </div>
 
                         <div>
@@ -54,6 +60,7 @@
                                     </div>
                                 </div>
                                 <p class="mt-4 text-lg text-gray-900">{{ $entry->plate }} | {{ $entry->message }}</p>
+                                <p class="mt-4 text-lg text-gray-900"><img src="{{ url('storage/'.$entry->photo) }}" alt="{{ $entry->plate }}" /></p>
                             </div>
                         </div>
                     @endforeach

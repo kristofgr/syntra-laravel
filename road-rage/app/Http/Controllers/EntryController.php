@@ -17,12 +17,16 @@ class EntryController extends Controller
         ]);
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request) //: RedirectResponse
     {
         $validated = $request->validate([
             'message' => 'required|string|max:255',
             'plate' => 'required|string|max:10',
         ]);
+
+        if ($request->hasFile('photo')) {
+            $validated['photo'] = $request->file('photo')->store('uploads', 'public');
+        }
 
         $request->user()->entries()->create($validated);
 
