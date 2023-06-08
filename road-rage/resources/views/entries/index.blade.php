@@ -20,7 +20,7 @@
                         </div>
 
                         <div>
-                            <x-input-label for="plate" :value="__('Message')" />
+                            <x-input-label for="message" :value="__('Message')" />
                             <textarea
                                 name="message"
                                 placeholder="{{ __('What\'s on your mind?') }}"
